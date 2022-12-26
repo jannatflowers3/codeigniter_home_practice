@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Student extends Migration
+class JannatMigration extends Migration
 {
     public function up()
     {
@@ -19,28 +19,24 @@ class Student extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
+            'email' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+               
+            ],
             'phone' => [
                 'type' => 'VARCHAR',
-                'constraint' => '20',
-                'null' => true,
+                'constraint' => '120',
             ],
-            'email' => [
-                'type' => 'VARCHAR',
-                'constraint' => '20',
-                'null' => true,
-            ],
-            'address' => [
-                'type' => 'VARCHAR',
-                'constraint' => '200',
-                'null' => true,
-            ],
+            
+
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('students');
+        $this->forge->createTable('Jannats');
     }
 
     public function down()
     {
-        $this->forge->dropTable('students');
+        $this->forge->dropTable('Jannats');
     }
 }

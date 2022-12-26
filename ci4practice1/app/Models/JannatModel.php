@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class StudentModel extends Model
+class JannatModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'students';
+    protected $table            = 'jannats';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name','email','phone','address','gender'];
+    protected $allowedFields    = ['name','email','phone'];
 
     // Dates
     protected $useTimestamps = false;

@@ -3,8 +3,9 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\StudentModel;
-class Student extends ResourceController
+use App\Models\JannatModel;
+
+class JannatController extends ResourceController
 {
     /**
      * Return an array of resource objects, themselves in array format
@@ -13,11 +14,10 @@ class Student extends ResourceController
      */
     public function index()
     {
-        $result = new StudentModel();
-        $mydata['studentdata'] = $result->findAll();
-
-        // print_r($mydata);
-        return view('student/StudentList',$mydata);
+        $modelcreata = new JannatModel();
+         $data['info'] = $modelcreata->findAll();
+    //    print_r($data);
+         return view("jannat/student_all_list",$data);
 
     }
 
@@ -38,7 +38,8 @@ class Student extends ResourceController
      */
     public function new()
     {
-       return view("student/add_newstudent");
+        $studentcreatae = new JannatModel();
+        return view("jannat/jannat_add_newstudent");
     }
 
     /**
@@ -48,14 +49,13 @@ class Student extends ResourceController
      */
     public function create()
     {
-    $model_add = new StudentModel();
-    $data = $this->request->getPost();
-    // print_r($data);
-    if($model_add->save($data)){
-        return redirect("Student");
+        $modelcreatadata = new JannatModel();
+        $data = $this->request->getPost();
+    //  print_r($data);
+    if($modelcreatadata->save($data)){
+        return redirect("JannatController");
     }
-
-    
+ 
     }
 
     /**
@@ -65,10 +65,9 @@ class Student extends ResourceController
      */
     public function edit($id = null)
     {
-        $modeledit = new StudentModel();
-        $data['studentEdit'] = $modeledit->find($id);
-        // print_r($data);
-        return view("student/student_edite",$data);
+        $editstudent = new JannatModel();
+        $dataedit['editstudent'] =$editstudent->find($id);
+          return view ("jannat/jannat_edit",$dataedit);
     }
 
     /**
@@ -78,10 +77,11 @@ class Student extends ResourceController
      */
     public function update($id = null)
     {
-        $updatestudent = new StudentModel();
-        $updateData = $this->request->getPost();
-        if($updateData->update($id,$data)){
-            return redirect()->to("student");
+        $model = new JannatModel();
+        $data = $this->request->getPost();
+        // print_r($data);
+        if ($model->update($id, $data)) {
+            return redirect()->to("JannatController");
         }
     }
 
@@ -92,8 +92,9 @@ class Student extends ResourceController
      */
     public function delete($id = null)
     {
-        $deletemodel = new StudentModel();
-        $data = $deletemodel->delete($id);
-        return redirect()->to("student");
+        $deletedata =  new JannatModel();
+        $deletedata->delete($id);
+        print_r($deletedata);
+        return redirect()->to("JannatController");
     }
 }

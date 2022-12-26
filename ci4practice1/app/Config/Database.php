@@ -35,7 +35,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'codelgniter_project3',
+        'database' => 'ci4project3',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

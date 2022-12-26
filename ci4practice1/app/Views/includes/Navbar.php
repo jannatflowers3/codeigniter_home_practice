@@ -18,8 +18,12 @@
         <a class="nav-link <?= ($page =="contact"? "active":"") ?>" href="/contact">Contact</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link <?= $page == "studentlist"?"active":""?>" href="/studentlist">StudentaList</a>
+        <a class="nav-link <?= $page == "student"?"active":""?>" href="/student">StudentaList</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link <?= $page == "jannatController"?"active":""?>" href="/jannatController">jannat_student list</a>
+      </li>
+       
     </ul>
   </div>
 </nav>
