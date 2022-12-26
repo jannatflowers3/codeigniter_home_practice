@@ -1,0 +1,81 @@
+  ########## composer ar  create project ############
+
+composer create-project codeigniter4/appstarter ci4project3
+
+
+project file path #########
+      cd ci4project3
+ 
+######## project run #########
+php spark serve
+
+
+
+student CRUD
+          = Student Migration  =>php spark make:migration Student
+        =   Student Migrate       => php spark migrate
+         =  Student Model      => php spark make:model studentModel
+        =   Student Controller     => php spark make:controller student --restful
+        =   Student View
+
+
+table always plural hobe ######
+
+########## migration ar jonno #########
+1. php spark make:migration Student
+
+table name always small letter and plurals hobe
+constraint = length
+
+database connect kore migrate korte hobe
+2. php spark migrate
+
+php spark migrate:refresh
+roll back = ager sob table delete kore new vabe refresh hobe
+
+3. php spark make:model studentModel
+
+model folder a allowedFields a name dite hobe
+[name,email] jai filed golo ditei hobe oiglo dite hobe
+
+4. php spark make:controller student =>command dile 1ta indext(method)asbe
+
+
+php spark make:controller student --restful
+
+onk golo method asbe
+
+
+
+
+
+app database a connection  
+app - >database = migration  == database ar data connection
+filte a cords a connectivite
+helper  daokar
+language multi-language korte hole menu r language change korte 
+libraries 
+models = data layer   user ar jono data layer,studenta ar jonno = model ,,, product ar jonno = layer modelll
+controllers  =logic part create kore
+views all file golo view korbe
+
+kon model ar data kkon view te show korbe oigolo controllers maintain kores
+
+
+1. database create kore setup app->confiq->Database -> database name dite hobe
+2  small letter and plural migration table create korte hobe php spark make:migration student
+3. table field change korte hole refresh korte hobe -> php spark migrate:refresh
+4. model create kore table name set korte hobe ->  php spark make:model jannatModel ->model name always capital 
+letter niye nai-.> allowedFields a table field sob golor name dite hobe
+5. controller a sob kiso sob kiso show korar jonno page ar name view te dite hobe -
+ ==->php spark make:controller jannatController --restful
+controller name always capitel letter hoiye jai
+
+6.   use App\Models\StudentModel;  controllers a model k call kore dite hobe.
+
+7. php spark routes name dekhte hobe 
+8.route ar page name dekhe khob hob o dite hobe
+app->confiq-> routes controllers a file path bole dite hobe
+
+page new create kore hole controller name small hate and new dite hobe and controller a new method a giye 
+page name return korte hobe 
