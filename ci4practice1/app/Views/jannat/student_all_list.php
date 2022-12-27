@@ -29,6 +29,7 @@ echo view("includes/Navbar.php");
     
       <?php endforeach;?>
     </table>
+           
     <!-- <a href ="/student/new"> Add New Student</a>-->
            <a href="/jannatController/new">Create New Student</a>
 </div>
